@@ -1,0 +1,44 @@
+
+<> Informações Topologia e Telas <>
+
+==================================================================
+Tela: Tela de Cadastro
+
+(Box) Nome
+(Box) Nº do apto
+(Box) Idade
+(Box) Senha 
+
+Tem usuario 2 ?
+
+*(Box) Se tem carro
+ (Box) Trabalha 
+ (Box) Número de integrantes*
+
+==================================================================
+Tela: Perfil do Apto 
+
+-Caixa de verificações para virus 
+-Editar informações e acrescentar outros integrantes do apto (nome, idade e etc)
+-Visualizar as solicitações abertas. *(um timer de cancelamento)*
+
+==================================================================
+Tela: Olhar e abrir solicitações de ajuda.
+
+-Abertura da solicitação requisitos:
+(Box) Nome
+(Box) Nº do Apto
+(Box) Solicitação aberta (mercado, farmácia x e x)
+(Box) Prazo limite (depende da solicitação // média de uma semana)
+(Box) Messagem (Detalhando do solicitação)
+
+Tela: Tela de confirmação:
+Itens que você pediu (dependendo da solicitação)
+Quem aceitou. (O outro apto) 
+*Bate papo* // Dados para contato (whats, email e etc)
+Combinação do pagamento (caso mercado e etc)
+*Aviso de histórico de virus ou detectado no momento*
+
+==================================================================
+
+
