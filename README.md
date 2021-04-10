@@ -50,9 +50,9 @@ Site created to help and assist the condominium manager. Thus, a platform to ope
 ## 👥 Contributors. <a name= "contri"></a>
 | Contributors | GitHub |
 | ------ | ------ |
-| Ana Komase | [GitHub Ana Komase](https://github.com/anakomase) |
-| Felipe Affonso | [GitHub Felipe Affonso](https://github.com/fe0093)|
-| Gabriel Callegari | [GitHub Gabriel Callegari](https://github.com/Callegaz)|
-| Giovanna Ragozzino | [GitHub Giovanna Ragozzino](https://github.com/giovanaragozzino) |
-| Isadora Riegert | [GitHub Isadora Riegert](https://github.com/isadorariegert) |
-| Victor Mendes | [GitHub Victor Mendes](https://github.com/Viictorreiss) |
+| Ana Komase | [Profile](https://github.com/anakomase) |
+| Felipe Affonso | [Profile](https://github.com/fe0093)|
+| Gabriel Callegari | [Profile](https://github.com/Callegaz)|
+| Giovanna Ragozzino | [Profile](https://github.com/giovanaragozzino) |
+| Isadora Riegert | [Profile](https://github.com/isadorariegert) |
+| Victor Mendes | [Profile](https://github.com/Viictorreiss) |
