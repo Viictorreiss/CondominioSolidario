@@ -28,9 +28,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-```
 Site created to help and assist the condominium manager. Thus, a platform to open and accept help from other apartments at the time of COVID-19. 😷🤮
-```
 
 ## ⛏️ Tools <a name = "built_using"></a>
 
