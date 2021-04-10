@@ -1,6 +1,12 @@
 
 <> Informações Topologia e Telas <>
 
+===========================================
+Perfil do Condo:
+
+- Avisar se o pedido não foi feito e aceite. 
+
+
 ==================================================================
 Tela: Tela de Cadastro
 
