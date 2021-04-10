@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img width=300px height=300px src="../docs/img/logo.jpeg">
+<img width=300px height=300px src="docs/img/logo.jpeg">
 
 ---
 
@@ -44,7 +44,7 @@ Site created to help and assist the condominium manager. Thus, a platform to ope
 
 # System Flow <a name= "systemflow"></a>
 
-<img src="../docs/img/systemflow.jpg">
+<img src="docs/img/systemflow.jpg">
 
 ---
 
