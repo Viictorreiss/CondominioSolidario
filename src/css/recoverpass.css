@@ -1,13 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Nothing+You+Could+Do&family=Pacifico&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-
 .body{
 			background-image: url(../img/BG7.jpg);
 			transition: all .5s;
 			padding: 1px;
-		}
+}
 		.veen{
 			width: 70%;
 			margin: 100px auto;
@@ -21,14 +16,14 @@
 			display: table-cell;
 			vertical-align: middle;
 			text-align: center;
-			color: rgb(0, 0, 0);
+			color: #fff;
 		}
 		.veen button{
 			background: transparent;
 			background-image: linear-gradient(90deg, #F27405, #0378A6);
 			display: inline-block;
 			padding: 10px 30px;
-			border: 30px #fff;
+			border: 3px solid #fff;
 			border-radius: 50px;
 			background-clip: padding-box;
 			position: relative;
@@ -151,7 +146,7 @@
 			}
 			.splits{
 				width: 50%;
-				background: rgb(0, 0, 0);
+				background: #fff;
 				float: left;
 			}
 			.splits button{

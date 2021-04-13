@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Cadastro</title>
-	<link rel="stylesheet" href="../src/css/register_login.css">
+	<link rel="stylesheet" href="../src/css/recoverpass.css">
 </head>
 
 <body class="body">
@@ -23,26 +23,23 @@
 				<p>Já é usuario ?</p>
 				<button class="active">Login</button>
 			</div>
-			<div class="rgstr-btn splits">
-				<p>Não possui conta ?</p>
-				<button>Registre-se</button>
+			<div>
+				<p>Recuperou sua Conta ?</p>
+				<a href="register_login.html"> Faça o Login</a>
 			</div>
 			<div class="wrapper">
-				<form action="profile_adm.html" id="login" tabindex="500">
-					<h3>Login</h3>
+				<form id="login" tabindex="500">
+					<h3>Informe seus dados</h3>
 					<div class="mail">
 						<input type="mail" name="">
 						<label>Email ou ID</label>
 					</div>
 					<div class="passwd">
 						<input type="password" name="">
-						<label>Senha</label>
+						<label>Nome de usuario</label>
 					</div>
 					<div class="submit">
-						<button class="dark">Login</button>
-					</div>
-					<div>
-						<a href="recoverpass.html">Recupere sua acesso.</a>
+						<button onclick="alert('Email de Recuperação de senha enviado')" class="dark">Recuperar</button>
 					</div>
 				</form>
 				<form id="register" tabindex="502">
@@ -72,7 +69,7 @@
 	</div>
 
 	<!-- Javascript -->
-	<script src="../src/js/register_login.js"></script>
+	<script src="../src/js/recoverpass.js"></script>
 
 </body>
 
