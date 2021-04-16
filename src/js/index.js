@@ -37,3 +37,6 @@ function typeWriter(element) {
 }
 const types = document.querySelector(".projeto-text-p")
 typeWriter(types)
+
+
+

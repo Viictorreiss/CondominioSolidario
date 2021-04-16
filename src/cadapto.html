@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="css/cadapto.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- multistep form -->
+<form id="msform">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Dados de Login.</li>
+    <li>Dados Pessoais.</li>
+    <li>Dados do Apto.</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Crie a sua conta</h2>
+    <h3 class="fs-subtitle">Etapa 1</h3>
+    <input type="text" name="email" placeholder="Email" />
+    <input type="password" name="pass" placeholder="Senha" />
+    <input type="password" name="cpass" placeholder="Confirme a senha" />
+    <input type="button" name="next" class="next action-button" value="Próximo" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Dados pessoais</h2>
+    <h3 class="fs-subtitle">Etapa 2</h3>
+    <input type="text" name="age" placeholder="Nome completo" />
+    <input type="text" name="cpf" placeholder="CPF" />
+    <input type="text" name="telefone" placeholder="Tel" />
+    <input type="text" name="data" placeholder="Data de nascimento" />
+    <input type="button" name="previous" class="previous action-button" value="Voltar" />
+    <input type="button" name="next" class="next action-button" value="Próximo" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Dados do apartamento</h2>
+    <h3 class="fs-subtitle">Etapa 3</h3>
+    <input type="text" name="fname" placeholder="Primeiro nome" />
+    <input type="text" name="lname" placeholder="Ultimo Nome" />
+    <input type="text" name="apto" placeholder="Apto" />
+    <textarea name="address" placeholder="Address"></textarea>
+    <input type="button" name="previous" class="previous action-button" value="Voltar" />
+    <input onclick="alert('Cadastro feito com sucesso.')" type="submit" name="submit" class="submit action-button" value="Enviar" />
+    </a>
+
+
+</form>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script><script  src="js/cadapto.js"></script>
+
+</body>
+</html>
