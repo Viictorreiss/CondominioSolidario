@@ -9,21 +9,32 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../src/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../src/img/favicon-16x16.png" />
     <link rel="manifest" href="imagens/site.webmanifest" />
+    <script src="../src/js/index.js" defer></script>
     <title> Condomínio Solidário </title>
 </head>
 
 <body>
 
     <div class="container">
-
-        <div class="misterious">
-            <div class="line" id="line1"></div>
-            <div class="line" id="line2"></div>
-            <div class="line" id="line3"></div>
-            <span>Fechar</span>
-        </div>
-
         <header>
+            <section class="menu">
+
+                <input type="checkbox" id="menu-hamburguer" class="menu__hamburguer">
+                <label for="menu-hamburguer" class="check-btn"></label>
+
+                <ul class="menu-ul menu__ul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html" class="menu__contato">Como funcionamos</a></li>
+                    <li><a href="register_login.html" class="menu__sobre">Login & Registro</a></li>
+                    <li><a href="#" class="menu__faq">Tenho Interesse</a></li>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </ul>
+            </section>
+
             <div class="img-wrapper">
                 <img src="../src/img/BG3.jpg" alt="">
             </div>
@@ -33,6 +44,14 @@
                 <button> <a class="button-home" href="#sessao-projetos"> Saiba Mais </a></button>
             </div>
         </header>
+        <!-- <div class="misterious">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+            <span>Fechar</span>
+        </div>
+
+        
 
         <aside class="sidebar">
             <navbar>
@@ -48,7 +67,7 @@
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-        </aside>
+        </aside> -->
 
         <section class="sessao-projetos" id="sessao-projetos">
             <div class="sessao-header">
@@ -153,6 +172,6 @@
 </body>
 
 
-<script src="../src/js/index.js"></script>
+
 
 </html>

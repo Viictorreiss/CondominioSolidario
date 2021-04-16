@@ -20,9 +20,9 @@
 ******************************MENU**********************************
 */
 
+
+/*
 .misterious {
-    /* background-color:; */
-    /* background: #FF6B5B; */
     width: 2rem;
     height: 2rem;
     position: fixed;
@@ -43,7 +43,6 @@
     width: 100%;
     height: .25rem;
     background-color: #ffffff;
-    /* box-shadow: 0.1rem 0.1rem 1px #000; */
     transition: transform 1s;
 }
 
@@ -89,6 +88,7 @@
 .show-menu .misterious:hover span {
     opacity: 1;
 }
+*/
 
 header {
     width: 100%;
@@ -96,10 +96,126 @@ header {
     /* VH significa Visual Height, e basicamente se refere a distancia vertical que fica na tela quando ela é aberta. Pegar 100% significa que quando a tela abrir, independente do lugar que for aberta, ela vai pegar 100% do frame inicial de abertura do site.*/
     overflow: hidden;
     /* Ele desabilita a possibilidade de o nosso cabeçalho passar do tamanho da janela, impedindo que gere assim uma barra de rolagem horizontal */
-    position: relative;
+    /* position: relative; */
 }
 
-.sidebar {
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px;
+    background: #FF6B5B;
+    /* border: #000 solid 5px; */
+    top: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    padding-right: 20px;
+    font-family: var(--font-action);
+}
+
+.menu a {
+    padding: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menu__hamburguer {
+    display: none;
+}
+
+.social-media {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .menu {
+        height: 40px;
+    }
+    .menu ul {
+        position: fixed;
+        margin-top: 0;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
+        z-index: 2;
+        width: 40%;
+        height: 100vh;
+        background: #ffffff;
+        right: -100%;
+        padding: 0;
+        padding-top: 100px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        transition: all .5s;
+    }
+    .menu ul li {
+        margin: 60px 0;
+        line-height: 30px;
+    }
+    .menu ul li a {
+        color: #0893B8;
+    }
+    .menu a:hover {
+        color: #F2B705;
+    }
+    .menu__hamburguer:checked~ul {
+        right: 0;
+    }
+    label.check-btn,
+    label.check-btn::before,
+    label.check-btn::after {
+        position: absolute;
+        width: 30px;
+        height: 5px;
+        border-radius: 5px;
+        background: #ffffff;
+        z-index: 3;
+        transition: .5s;
+    }
+    label.check-btn {
+        cursor: pointer;
+        top: 40px;
+        right: 50px;
+    }
+    label.check-btn::before {
+        content: "";
+        transform: translateY(-10px);
+    }
+    label.check-btn::after {
+        content: "";
+        transform: translateY(10px);
+    }
+    .menu__hamburguer:checked+label.check-btn {
+        width: 0;
+        right: 90px;
+    }
+    .menu__hamburguer:checked+label.check-btn::before {
+        transform: rotate(45deg);
+        background: #F2B705;
+    }
+    .menu__hamburguer:checked+label.check-btn::after {
+        transform: rotate(-45deg);
+        background: #F2B705;
+    }
+    .social-media {
+        display: flex;
+        border: #000 1px solid;
+    }
+    .social-media a {
+        color: #0893B8;
+    }
+}
+
+
+/* .sidebar {
     width: 20rem;
     height: 100vh;
     background-color: #fff;
@@ -111,20 +227,23 @@ header {
 
 .show-menu .sidebar {
     right: 0;
-}
+} */
 
-.menu {
+
+/* .menu {
     display: flex;
     height: 600px;
     flex-direction: column;
     justify-content: space-around;
-    /* border: #000 1px solid; */
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
+
+/* 
 .menu-item {
     text-align: center;
     margin-bottom: .5rem;
@@ -165,7 +284,7 @@ header {
 
 .social-media i:hover {
     background-color: #F2B705;
-}
+} */
 
 
 /*
@@ -176,7 +295,8 @@ header {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgb(0, 0, 0, 0.8)/* o elemento depois de red green e blue é o Alpha, que representa a opacidade/ transparência do elemento*/
+    background-color: rgb(0, 0, 0, 0.8)
+    /* o elemento depois de red green e blue é o Alpha, que representa a opacidade/ transparência do elemento*/
 }
 
 .img-wrapper img {
