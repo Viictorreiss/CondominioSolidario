@@ -150,14 +150,15 @@ header {
         background: #ffffff;
         right: -100%;
         padding: 0;
-        padding-top: 100px;
+        padding-top: 20px;
         text-align: center;
+        justify-content: space-around;
         display: flex;
         flex-direction: column;
         transition: all .5s;
     }
     .menu ul li {
-        margin: 60px 0;
+        margin: 60px 0 0 0;
         line-height: 30px;
     }
     .menu ul li a {
@@ -207,10 +208,18 @@ header {
     }
     .social-media {
         display: flex;
-        border: #000 1px solid;
+        justify-content: space-around;
     }
     .social-media a {
         color: #0893B8;
+        padding: 10px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 535px) {
+    .menu ul {
+        width: 100%;
     }
 }
 
