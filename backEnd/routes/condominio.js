@@ -1,6 +1,5 @@
 const { Router } = require("express")
 const connect = require("./../config/db")
-
 let router = Router()
 
 router.get("/", async (req, res) => {
@@ -15,6 +14,5 @@ router.post("/", async (req, res) => {
     const retorno = await conn.query('INSERT INTO condominio (Nome, CEP, UF, Cidade, Bairro, Rua, Numero) values (?, ?, ?, ?, ?, ?, ?);', [body.nome, body.cep, body.uf, body.cidade, body.bairro, body.rua, body.numero]); 
     res.send(retorno)
 })
-
 
 module.exports = router
