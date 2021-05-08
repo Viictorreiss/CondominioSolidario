@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     const body = req.body;
     const conn = await connect();
-    const retorno = await conn.query('INSERT INTO usuario (idCondominio, Administrador, Ativo, Nome, Bloco, Apartamento, Telefone, Documento) values (?, ?, ?, ?, ?, ?, ?, ?);', [body.condominio, body.administrador, body.ativo, body.nome, body.bloco, body.apartamento, body.telefone, body.documento]); 
+    const retorno = await conn.query('INSERT INTO usuario (idCondominio, Administrador, Ativo, Nome, Bloco, Apartamento, Telefone, Documento, Senha) values (?, ?, ?, ?, ?, ?, ?, ?, ?);', [body.condominio, body.administrador, body.ativo, body.nome, body.bloco, body.apartamento, body.telefone, body.documento, body.senha]); 
     res.send(retorno)
 })
 
