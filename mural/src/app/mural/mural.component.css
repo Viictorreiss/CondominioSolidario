@@ -14,9 +14,9 @@
   header {
     width: 100%;
     height: 15vh;
-    /* VH significa Visual Height, e basicamente se refere a distancia vertical que fica na tela quando ela é aberta. Pegar 100% significa que quando a tela abrir, independente do lugar que for aberta, ela vai pegar 100% do frame inicial de abertura do site.*/
+    /* VH significa Visual Height, e basicamente se refere a distancia vertical que fica na tela quando ela Ã© aberta. Pegar 100% significa que quando a tela abrir, independente do lugar que for aberta, ela vai pegar 100% do frame inicial de abertura do site.*/
     overflow: hidden;
-    /* Ele desabilita a possibilidade de o nosso cabeçalho passar do tamanho da janela, impedindo que gere assim uma barra de rolagem horizontal */
+    /* Ele desabilita a possibilidade de o nosso cabeÃ§alho passar do tamanho da janela, impedindo que gere assim uma barra de rolagem horizontal */
     /* position: relative; */
 }
 
@@ -30,6 +30,7 @@
     top: 0;
     position: fixed;
     z-index: 2;
+    cursor: pointer;
 }
 
 .menu ul {

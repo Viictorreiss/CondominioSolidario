@@ -9,6 +9,10 @@
     height: auto;
 }
 
+select{
+    width: 135%;
+}
+
 .board.solicitacao {
     margin: auto;
     position: absolute;
@@ -29,12 +33,14 @@
     letter-spacing: 1;
     cursor: pointer;
     text-decoration: none;
+    margin-left: 8%;
 }
 
 .botao.cancelar,
 .botao.confirmar {
     width: 35%;
     height: 10%;
+    
 }
 
 

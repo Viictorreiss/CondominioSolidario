@@ -1,28 +1,48 @@
-import { Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
+export interface DialogData {
+  nome: string;
+  sobrenome: string;
+}
 @Component({
   selector: 'app-mural',
   templateUrl: './mural.component.html',
   styleUrls: ['./mural.component.css']
 })
-export class MuralComponent implements OnInit {
+export class MuralComponent {
 
-  constructor() { }
+  nome: string;
+  sobrenome: string;
 
-  @Input() pessoa;
+  constructor(public dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  openDialog(): void {
+    const dialogRef = this.dialog.open(NovoPostComponent, {
+      width: '380px',
+      data: {nome: this.nome, sobrenome: this.sobrenome}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.nome = result;
+    });
   }
 
-  
-  pessoas = [
-    { nome: "", idade: 18 },
-    { nome: "", idade: 22 }
- ];
+} 
+@Component({
+  selector: 'app-mural',
+  templateUrl: './novo-post.component.html',
+  styleUrls: ['./novo-post.component.css']
+})
+export class NovoPostComponent {
 
-  onAdicionarPessoa(pessoa) {
-    this.pessoas = [pessoa, ...this.pessoas];
+  constructor(
+    public dialogRef: MatDialogRef<NovoPostComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }
