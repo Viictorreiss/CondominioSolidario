@@ -7,17 +7,23 @@ import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-cond
 import { routing } from './app.routing';
 import { CrudService } from './cadastro-condominio/crud.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
+
+import {FormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CadastroCondominioComponent
+    CadastroCondominioComponent,
+    CadastroUserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    routing
+    routing,
+    FormsModule    
   ],
   providers: [
     CrudService
