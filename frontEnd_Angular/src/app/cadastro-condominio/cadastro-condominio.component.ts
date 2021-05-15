@@ -20,6 +20,6 @@ export class CadastroCondominioComponent extends CrudService<CadastroCondominio>
   ngOnInit(): void {
     this.list().subscribe(result => {
       this.condominios = result;
-    });  
+    });
   }
 }
