@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 
 import {FormsModule} from "@angular/forms";
+import { LoginUserComponent } from './login-user/login-user.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {FormsModule} from "@angular/forms";
     AppComponent,
     HeaderComponent,
     CadastroCondominioComponent,
-    CadastroUserComponent
+    CadastroUserComponent,
+    LoginUserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,27 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
+import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
+import { LoginUserComponent } from './login-user/login-user.component';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes = [
-   { path: '', component: HeaderComponent },
-   { path: 'condominio', component: CadastroCondominioComponent },
+   { 
+      path: '', 
+      component: HomeComponent 
+   },
+   { 
+      path: 'cadastro', 
+      component: CadastroUserComponent 
+   },
+   {
+      path: 'login',
+      component: LoginUserComponent
+   },
 
    // otherwise redirect to home
-   { path: '**', redirectTo: '' }
+   // { path: '**', redirectTo: '' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
