@@ -262,8 +262,9 @@ body {
 	border-radius: 50%;
 }
 
-
-
+.problemas{
+	text-decoration: none;
+}
 
 
 .main-color {
