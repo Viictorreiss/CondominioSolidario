@@ -19,10 +19,6 @@ const appRoutes: Routes = [
       path: 'login',
       component: LoginUserComponent
    },
-   {
-      path: 'condominio',
-      component: CadastroCondominioComponent
-   },
 
    // otherwise redirect to home
    // { path: '**', redirectTo: '' }
