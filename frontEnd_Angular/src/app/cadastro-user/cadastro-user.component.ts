@@ -30,6 +30,6 @@ export class CadastroUserComponent extends CrudService<CadastroUsuario> implemen
 
   criarObjeto() : any {
 
-    return new CadastroUsuario(this.model.nome, this.model.bloco, this.model.apartamento, this.model.senha);
+    return new CadastroUsuario(this.model.nome, this.model.bloco, this.model.apartamento, this.model.senha, this.model.telefone);
   }
 }
