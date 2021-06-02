@@ -55,50 +55,43 @@
       </div>
     </div>
 
-  <div class="container">
+    <div class="container">
       
-  <div class="row board urgente">
-    <div class="col urgente order-2">
-      <h1 class="titulo">URGENTE</h1>
-        <div class="card border-danger h-100">
-          <div class="card-body">
-            <h5 class="card-title">{{nome}}</h5>
-            <p class="card-text descricao">Breve descrição</p>
+        <div class="row board urgente">
+          <div class="col">
+            <h1 class="titulo">URGENTE</h1>
+                <div class="card border-danger h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{nome}}</h5>
+                        <p class="card-text descricao">Breve descrição</p>
+                    </div>
 
-            <button type="submit" class="btn botao confirmar btn-outline-success ms-1 me-1">Aceitar</button>
-            <button type="button" class="btn botao cancelar btn-outline-danger">Recusar</button>
-          </div>
+                    <div class="card-body separacao">
+                        <h5 class="card-title">Nome morador</h5>
+                        <p class="card-text descricao">Breve descrição</p>
 
-        <div class="card-body separacao">
-          <h5 class="card-title">Nome morador</h5>
-          <p class="card-text descricao">Breve descrição</p>
-
-          <button type="submit" class="btn botao confirmar btn-outline-success ms-2 me-2">Aceitar</button>
-          <button type="button" class="btn botao cancelar btn-outline-danger">Recusar</button>
+                        <a href="#" class="button detalhes" (click)="openDialog()">Detalhes</a>
+                    </div>
+                </div>
+             </div>
         </div>
-      </div>
-    </div>
-  </div>
 
         <div class="col board importante order-5">
           <h1 class="titulo">IMPORTANTE</h1>
             <div class="card border-warning h-100">
-              <div class="card-body separacao-importante">
-                <h5 class="card-title">Nome morador</h5>
-                <p class="card-text descricao">Breve descrição</p>
-
-                <button type="submit" class="btn botao confirmar btn-outline-success ms-2 me-2">Aceitar</button>
-                <button type="button" class="btn botao cancelar btn-outline-danger">Recusar</button>
-              </div>
-
                 <div class="card-body separacao-importante">
                   <h5 class="card-title">Nome morador</h5>
                   <p class="card-text descricao">Breve descrição</p>
-  
-                  <button type="submit" class="btn botao confirmar btn-outline-success ms-2 me-2">Aceitar</button>
-                  <button type="button" class="btn botao cancelar btn-outline-danger">Recusar</button>
-                  
+
+                  <a href="#" class="button detalhes">Detalhes</a>
                 </div>
+
+                <div class="card-body separacao-importante">
+                    <h5 class="card-title">Nome morador</h5>
+                    <p class="card-text descricao">Breve descrição</p>
+  
+                    <a href="#" class="button detalhes"  >Detalhes</a>
+                  </div>
         </div>
 
         </div>
@@ -109,16 +102,14 @@
                   <h5 class="card-title">Nome morador</h5>
                   <p class="card-text descricao">Breve descrição</p>
 
-                  <button type="submit" class="btn botao confirmar btn-outline-success ms-2 me-2">Aceitar</button>
-                  <button type="button" class="btn botao cancelar btn-outline-danger">Recusar</button>
+                  <a href="#" class="button detalhes">Detalhes</a>
                 </div>
 
                 <div class="card-body separacao-pendente">
                     <h5 class="card-title">Nome morador</h5>
                     <p class="card-text descricao">Breve descrição</p>
   
-                  <button type="submit" class="btn botao confirmar btn-outline-success ms-2 me-2">Aceitar</button>
-                  <button type="button" class="btn botao cancelar btn-outline-danger">Recusar</button>
+                    <a href="#" class="button detalhes">Detalhes</a>
                   </div>
             </div>          
         </div>
