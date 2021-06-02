@@ -14,6 +14,8 @@ import { MuralComponent } from './mural/mural.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { DetalhesComponent } from './detalhes/detalhes.component';
+import { NovoPostComponent } from './novo-post/novo-post.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     CadastroUserComponent,
     LoginUserComponent,
     HomeComponent,
-    PerfilComponent
+    PerfilComponent,
+    DetalhesComponent,
+    NovoPostComponent,
   ],
   imports: [
     BrowserModule,
