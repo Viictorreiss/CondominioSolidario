@@ -4,18 +4,12 @@ import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-cond
 import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
-import { MuralComponent } from './mural/mural.component';
-
 
 
 const appRoutes: Routes = [
    { 
       path: '', 
       component: HomeComponent 
-   },
-   {
-      path: 'mural',
-      component: MuralComponent
    },
    { 
       path: 'cadastro', 
