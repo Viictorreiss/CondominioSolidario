@@ -1,31 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from "@angular/forms";
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
 import { routing } from './app.routing';
 import { CrudService } from './cadastro-condominio/crud.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 
-import {FormsModule} from "@angular/forms";
+import { AppComponent } from './app.component';
+import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
+import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
+import { HeaderComponent } from './header/header.component';
+import { MuralComponent } from './mural/mural.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
-import { PerfilUsuComponent } from './perfil-usu/perfil-usu.component';
-import { PerfilSindComponent } from './perfil-sind/perfil-sind.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { DetalhesComponent } from './detalhes/detalhes.component';
+import { NovoPostComponent } from './novo-post/novo-post.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    MuralComponent,
     CadastroCondominioComponent,
     CadastroUserComponent,
     LoginUserComponent,
     HomeComponent,
-    PerfilUsuComponent,
-    PerfilSindComponent
+    PerfilComponent,
+    DetalhesComponent,
+    NovoPostComponent,
   ],
   imports: [
     BrowserModule,
