@@ -189,3 +189,41 @@ a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, t
   background-color: #FF6B5B;
   color: #ebebeb;
 }
+
+.bio-graph-info {
+  color: #89817e;
+}
+
+.bio-graph-info h1 {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0 0 0px;
+}
+
+label {
+  width: 200%;
+  float: left;
+  margin-bottom: 15px;
+  padding:0 20px;
+}
+
+#inputSpace span {
+  width: 70px;
+  display: inline-block;
+}
+
+#buttonEdition {
+  line-height: 12px;
+  width: 7.5rem;
+  font-size: 8pt;
+  font-family: tahoma;
+  margin-top: 1px;
+  margin-right: 10px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+h1 {
+  padding-bottom: 1.5rem;
+}
