@@ -24,8 +24,8 @@ export class CondominioRegistryComponent extends CrudService<CondominioRegistry>
 
   public register() {
     let user = this.criarObjeto();
-    this.create(user).subscribe(() => {
-      console.log('sucesso!');
+    this.create(user).subscribe(data => {
+      console.log(data[0].insertId);
     });
   }
 
