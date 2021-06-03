@@ -1,232 +1,228 @@
 <body>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-
-  <body class="loginBody">
-    <div class="m-auto mt-5">
-      <div class="row">
-        <div class="col-12 loginTitle mt-5" style="text-align: center">
-          <h1>Cadastro do Condomínio</h1>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  
+    <body class="loginBody">
+      <div class="m-auto mt-5">
+        <div class="row">
+          <div class="col-12 loginTitle mt-5" style="text-align: center">
+            <h1>Cadastro do Condomínio</h1>
+          </div>
         </div>
-      </div>
-      <div class="row mt-3 mb-5">
-        <div class="col-12 d-flex justify-content-center">
-          <div class="card">
-            <div class="card-header" style="text-align: center">
-              Condomínio Solidario
-            </div>
-            <div class="card-body">
-              <form id="formulario" name="form" (ngSubmit)="f.form.valid && register()"
-              #f="ngForm" novalidate>
-                <div class="row">
-                  <div class="col-12 form-group" [ngClass]="{ 'has-error': f.submitted && !nome.valid }">
-                    <div class="form-group">
-                      <!-- <label for="exampleInputPassword1">Nome:</label> -->
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"
-                            ><i class="fas fa-user-friends"></i
-                          ></span>
+        <div class="row mt-3 mb-5">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="card">
+              <div class="card-header" style="text-align: center">
+                Condomínio Solidario
+              </div>
+              <div class="card-body">
+                <form id="formulario" name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+                  <div class="row">
+                    <div class="col-12 form-group"  [ngClass]="{ 'has-error': f.submitted && !nome.valid }">
+                      <div class="form-group">
+                        <!-- <label for="exampleInputPassword1">Nome:</label> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fas fa-user-friends"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Nome do Condominio"
+                            aria-label="Nome"
+                            aria-describedby="basic-addon1"
+                            name="nome"
+                            [(ngModel)]="model.nome"
+                            #nome="ngModel"
+                            required
+                          />
+                          <div *ngIf="f.submitted && !nome.valid" class="help-block">Name is required</div>
                         </div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Nome do Condominio"
-                          aria-label="Nome"
-                          aria-describedby="basic-addon1"
-                          [(ngModel)]="model.nome"
-                          #nome="ngModel"
-                          name="nome"
-                          required
-                        />
-                        <div *ngIf="f.submitted && !nome.valid" class="help-block">Name is required</div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <hr />
-                <div class="row">
-                  <div class="col-6" [ngClass]="{ 'has-error': f.submitted && !cep.valid }">
-                    <div class="form-group">
-                      <!-- <label for="exampleInputPassword1">CEP:</label> -->
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"
-                            ><i class="fa fa-map-marker"></i
-                          ></span>
+  
+                  <hr />
+                  <div class="row">
+                    <div class="col-6" [ngClass]="{ 'has-error': f.submitted && !cep.valid }">
+                      <div class="form-group">
+                        <!-- <label for="exampleInputPassword1">CEP:</label> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-map-marker"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="number"
+                            class="form-control"
+                            placeholder="CEP"
+                            aria-label="cep"
+                            aria-describedby="basic-addon1"
+                            name="cep"
+                            [(ngModel)]="model.cep"
+                            #cep="ngModel"
+                            required
+                          />
+                          <div *ngIf="f.submitted && !cep.valid" class="help-block">Password is required</div>
                         </div>
-                        <input
-                          type="number"
-                          class="form-control"
-                          placeholder="CEP"
-                          aria-label="cep"
-                          aria-describedby="basic-addon1"
-                          name="cep"
-                          [(ngModel)]="model.cep"
-                          #cep="ngModel"
-                          required
-                        />
-                        <div *ngIf="f.submitted && !cep.valid" class="help-block">Password is required</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <!-- <label for="exampleInputPassword1">Confirmar senha:</label> -->
+                      <div class="form-group"
+                      [ngClass]="{ 'has-error': f.submitted && !uf.valid }">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fa fa-globe"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="UF"
+                            aria-label="uf"
+                            aria-describedby="basic-addon1"
+                            name="uf"
+                            [(ngModel)]="model.uf"
+                            #uf="ngModel"
+                            required
+                          />
+                          <div *ngIf="f.submitted && !uf.valid" class="help-block">UF is required</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-6">
-                    <!-- <label for="exampleInputPassword1">Confirmar senha:</label> -->
-                    <div class="form-group"
-                    [ngClass]="{ 'has-error': f.submitted && !uf.valid }">
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"
-                            ><i class="fa fa-globe"></i
-                          ></span>
+                  <hr />
+  
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !cidade.valid }">
+                        <!-- <label for="exampleInputPassword1">Nº do apartamento:</label> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fas fa-flag"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Cidade"
+                            aria-label="Cidade"
+                            aria-describedby="basic-addon1"
+                            name="cidade"
+                            [(ngModel)]="model.cidade"
+                            #cidade="ngModel"
+                            required
+                          />
+                          <div *ngIf="f.submitted && !cidade.valid" class="help-block">Cidade is required</div>
                         </div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="UF"
-                          aria-label="uf"
-                          aria-describedby="basic-addon1"
-                          required
-                          name="uf"
-                          [(ngModel)]="model.uf"
-                          #uf="ngModel"
-                        />
-                        <div *ngIf="f.submitted && !uf.valid" class="help-block">UF is required</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !bairro.valid }">
+                        <!-- <label for="exampleInputPassword1">Bloco:</label> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fas fa-road"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Bairro"
+                            aria-label="Bairro"
+                            aria-describedby="basic-addon1"
+                            name="bairro"
+                            [(ngModel)]="model.bairro"
+                            #bairro="ngModel"
+                            required
+                          />
+                          <div *ngIf="f.submitted && !bairro.valid" class="help-block">Bairro is required</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <hr />
-
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !cidade.valid }">
-                      <!-- <label for="exampleInputPassword1">Nº do apartamento:</label> -->
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"
-                            ><i class="fas fa-flag"></i
-                          ></span>
+                  <hr />
+  
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !rua.valid }">
+                        <!-- <label for="exampleInputPassword1">Nº do apartamento:</label> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fas fa-home"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Rua"
+                            aria-label="Rua"
+                            aria-describedby="basic-addon1"
+                            name="rua"
+                            [(ngModel)]="model.rua"
+                            #rua="ngModel"
+                            required
+                          />
+                          <div *ngIf="f.submitted && !rua.valid" class="help-block">Rua is required</div>
                         </div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Cidade"
-                          aria-label="Username"
-                          aria-describedby="basic-addon1"
-                          required
-                          name="cidade"
-                          [(ngModel)]="model.cidade"
-                          #cidade="ngModel"
-                        />
-                        <div *ngIf="f.submitted && !cidade.valid" class="help-block">Cidade is required</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !numero.valid }">
+                        <!-- <label for="exampleInputPassword1">Bloco:</label> -->
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"
+                              ><i class="fas fa-sign"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="number"
+                            class="form-control"
+                            placeholder="Numero"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            name="numero"
+                            [(ngModel)]="model.numero"
+                            #numero="ngModel"
+                            required
+                          />
+                          <div *ngIf="f.submitted && !numero.valid" class="help-block">Numero is required</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-6">
-                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !bairro.valid }">
-                      <!-- <label for="exampleInputPassword1">Bloco:</label> -->
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"
-                            ><i class="fas fa-road"></i
-                          ></span>
-                        </div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Bairro"
-                          aria-label="Username"
-                          aria-describedby="basic-addon1"
-                          required
-                          name="bairro"
-                          [(ngModel)]="model.bairro"
-                          #bairro="ngModel"
-                        />
-                        <div *ngIf="f.submitted && !bairro.valid" class="help-block">Bairro is required</div>
-                      </div>
-                    </div>
+  
+                  <hr />
+                  <br />
+                  <div class="d-flex justify-content-center align-center">
+                    <!-- <button
+                      class="btn btn-outline-success registerButton"
+                      routerLink="/cadastro"
+                    > -->
                   </div>
-                </div>
-                <hr />
-
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !rua.valid }">
-                      <!-- <label for="exampleInputPassword1">Nº do apartamento:</label> -->
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"
-                            ><i class="fas fa-home"></i
-                          ></span>
-                        </div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="Rua"
-                          aria-label="Rua"
-                          aria-describedby="basic-addon1"
-                          required
-                          name="rua"
-                          [(ngModel)]="model.rua"
-                          #rua="ngModel"
-                        />
-                        <div *ngIf="f.submitted && !rua.valid" class="help-block">Rua is required</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !numero.valid }">
-                      <!-- <label for="exampleInputPassword1">Bloco:</label> -->
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="basic-addon1"
-                            ><i class="fas fa-sign"></i
-                          ></span>
-                        </div>
-                        <input
-                          type="number"
-                          class="form-control"
-                          placeholder="Numero"
-                          aria-label="Username"
-                          aria-describedby="basic-addon1"
-                          required
-                          name="numero"
-                          [(ngModel)]="model.numero"
-                          #numero="ngModel"
-                        />
-                        <div *ngIf="f.submitted && !numero.valid" class="help-block">Numero is required</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <hr />
-                <br />
-                <div class="d-flex justify-content-center align-center">
-                  <!-- <button
-                    class="btn btn-outline-success registerButton"
-                    routerLink="/cadastro"
-                  > -->
-                  <button
-                    class="btn btn-outline-success registerButton" type="button"
-                  >
-                    Cadastrar
-                  </button>
-                </div>
-              </form>
+                  <button class="btn btn-outline-success registerButton" type="button"> Cadastrar</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
+        <!-- <div class="row ">
+              <div class="col-12 loginTitle" style="text-align: center;">
+                  <p id="registerLink">Ou <a href="/login" >faça o login</a> se já for registrado</p>
+              </div>
+          </div> -->
       </div>
-      <!-- <div class="row ">
-            <div class="col-12 loginTitle" style="text-align: center;">
-                <p id="registerLink">Ou <a href="/login" >faça o login</a> se já for registrado</p>
-            </div>
-        </div> -->
-    </div>
+    </body>
   </body>
-</body>
+  

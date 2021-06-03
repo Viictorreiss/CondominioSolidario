@@ -1,9 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
 import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
+import { CondominioRegistryComponent } from './condominio-registry/condominio-registry.component';
 
 
 const appRoutes: Routes = [
@@ -21,7 +21,7 @@ const appRoutes: Routes = [
    },
    {
       path: 'condominio',
-      component: CadastroCondominioComponent
+      component: CondominioRegistryComponent
    },
 
    // otherwise redirect to home
