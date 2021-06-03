@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { CrudService } from '../cadastro-condominio/crud.service';
 import { CondominioRegistry } from './condominio-registry';
@@ -15,7 +16,7 @@ export class CondominioRegistryComponent extends CrudService<CondominioRegistry>
   condominios: any[];
   model: any = {};
   
-  constructor(protected http: HttpClient) {
+  constructor(protected http: HttpClient, protected router: Router) {
     super(http, `${environment.backendBaseUri}/condominio`);
   }
 
@@ -25,12 +26,12 @@ export class CondominioRegistryComponent extends CrudService<CondominioRegistry>
   public register() {
     let user = this.criarObjeto();
     this.create(user).subscribe(data => {
-      console.log(data[0].insertId);
+      console.log('sucesso');
+      this.router.navigate([`/condominio/${data[0].insertId}/link`]);
     });
   }
 
   criarObjeto() : any {
-
     return new CondominioRegistry(this.model.nome, this.model.cep, this.model.uf, this.model.cidade, this.model.bairro, this.model.rua, this.model.numero);
   }
 }

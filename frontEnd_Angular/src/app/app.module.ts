@@ -13,6 +13,7 @@ import {FormsModule} from "@angular/forms";
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { CondominioRegistryComponent } from './condominio-registry/condominio-registry.component';
+import { LinkMoradoresComponent } from './link-moradores/link-moradores.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CondominioRegistryComponent } from './condominio-registry/condominio-re
     CadastroUserComponent,
     LoginUserComponent,
     HomeComponent,
-    CondominioRegistryComponent
+    CondominioRegistryComponent,
+    LinkMoradoresComponent
   ],
   imports: [
     BrowserModule,

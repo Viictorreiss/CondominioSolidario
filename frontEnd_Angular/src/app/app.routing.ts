@@ -4,6 +4,7 @@ import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { CondominioRegistryComponent } from './condominio-registry/condominio-registry.component';
+import { LinkMoradoresComponent } from './link-moradores/link-moradores.component';
 
 
 const appRoutes: Routes = [
@@ -12,7 +13,7 @@ const appRoutes: Routes = [
       component: HomeComponent 
    },
    { 
-      path: 'cadastro', 
+      path: 'condominio/:id/cadastro', 
       component: CadastroUserComponent 
    },
    {
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
       path: 'condominio',
       component: CondominioRegistryComponent
    },
+   {
+      path: 'condominio/:id/link', 
+      component: LinkMoradoresComponent 
+   }
 
    // otherwise redirect to home
    // { path: '**', redirectTo: '' }
