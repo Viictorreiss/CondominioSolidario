@@ -14,8 +14,7 @@ import { MuralComponent } from './mural/mural.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { DetalhesComponent } from './detalhes/detalhes.component';
-import { NovoPostComponent } from './novo-post/novo-post.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -28,14 +27,13 @@ import { NovoPostComponent } from './novo-post/novo-post.component';
     LoginUserComponent,
     HomeComponent,
     PerfilComponent,
-    DetalhesComponent,
-    NovoPostComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     routing,
-    FormsModule    
+    FormsModule,
+    NgbModule    
   ],
   providers: [
     CrudService
