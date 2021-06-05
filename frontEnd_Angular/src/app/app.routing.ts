@@ -5,6 +5,7 @@ import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { CondominioRegistryComponent } from './condominio-registry/condominio-registry.component';
 import { LinkMoradoresComponent } from './link-moradores/link-moradores.component';
+import { LinkUserComponent } from './link-user/link-user.component';
 
 
 const appRoutes: Routes = [
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
    {
       path: 'condominio/:id/link', 
       component: LinkMoradoresComponent 
+   },
+   {
+      path: 'usuario/:id/link', 
+      component: LinkUserComponent 
    }
 
    // otherwise redirect to home

@@ -14,6 +14,7 @@ import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { CondominioRegistryComponent } from './condominio-registry/condominio-registry.component';
 import { LinkMoradoresComponent } from './link-moradores/link-moradores.component';
+import { LinkUserComponent } from './link-user/link-user.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LinkMoradoresComponent } from './link-moradores/link-moradores.componen
     LoginUserComponent,
     HomeComponent,
     CondominioRegistryComponent,
-    LinkMoradoresComponent
+    LinkMoradoresComponent,
+    LinkUserComponent
   ],
   imports: [
     BrowserModule,
