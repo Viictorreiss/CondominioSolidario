@@ -16,6 +16,7 @@ export class MuralComponent extends CrudService<Mural> implements OnInit {
   muralUrgente: any[];
   muralImportante: any[];
   muralPendente: any[];
+  muralExecucao: any[];
   
   constructor(protected http: HttpClient, config: NgbModalConfig, private modalService: NgbModal) {
     super(http, `${environment.backendBaseUri}/mural`);
@@ -29,13 +30,16 @@ export class MuralComponent extends CrudService<Mural> implements OnInit {
   ngOnInit(): void {
     this.list().subscribe(result => {
       this.muralUrgente = result.filter((mural) => {
-        return mural.IdPrioridade == 1
+        return mural.IdPrioridade == 1 && mural.ID_ESTADO == 1
       });
       this.muralImportante = result.filter((mural) => {
-        return mural.IdPrioridade == 2
+        return mural.IdPrioridade == 2 && mural.ID_ESTADO == 1
       });
       this.muralPendente = result.filter((mural) => {
-        return mural.IdPrioridade == 3
+        return mural.IdPrioridade == 3 && mural.ID_ESTADO == 1
+      });
+      this.muralExecucao = result.filter((mural) => {
+        return mural.ID_ESTADO == 2
       });
     });
   }

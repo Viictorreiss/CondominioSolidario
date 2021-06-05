@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
 import { HeaderComponent } from './header/header.component';
+import { HeaderMuralComponent } from './header-mural/header.component';
 import { MuralComponent } from './mural/mural.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginUserComponent,
     HomeComponent,
     PerfilComponent,
+    HeaderMuralComponent
   ],
   imports: [
     BrowserModule,

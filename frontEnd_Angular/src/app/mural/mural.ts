@@ -7,5 +7,6 @@ export interface Mural {
     "ID_SERVICO": number,
     "NOME_SERVICO": string,
     "SERVICO_DESCRICAO": string,
-    "ESTADO": string
+    "ESTADO": string,
+    "ID_ESTADO": number
 }
