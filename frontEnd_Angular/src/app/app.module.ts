@@ -10,12 +10,12 @@ import { AppComponent } from './app.component';
 import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
 import { HeaderComponent } from './header/header.component';
+import { HeaderMuralComponent } from './header-mural/header.component';
 import { MuralComponent } from './mural/mural.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { DetalhesComponent } from './detalhes/detalhes.component';
-import { NovoPostComponent } from './novo-post/novo-post.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -28,14 +28,14 @@ import { NovoPostComponent } from './novo-post/novo-post.component';
     LoginUserComponent,
     HomeComponent,
     PerfilComponent,
-    DetalhesComponent,
-    NovoPostComponent,
+    HeaderMuralComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     routing,
-    FormsModule    
+    FormsModule,
+    NgbModule    
   ],
   providers: [
     CrudService

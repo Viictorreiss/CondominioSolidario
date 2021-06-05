@@ -18,6 +18,11 @@
 
 ---
 
+## 📝 Execute Database
+
+- Run docker-compose up -d
+- bash ./config/init.sh
+
 ## 📝 Table of Contents
 
 - [About](#about)

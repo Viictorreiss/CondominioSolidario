@@ -7,6 +7,7 @@ const prioridade = require("./routes/prioridade")
 const servicos = require("./routes/servicos") 
 const tasks = require("./routes/tasks") 
 const usuario = require("./routes/usuario") 
+const mural = require("./routes/mural") 
 const app = express()
 
 app.use(cors())
@@ -20,6 +21,7 @@ app.use("/prioridade", prioridade)
 app.use("/servicos", servicos)
 app.use("/tasks", tasks)
 app.use("/usuario", usuario)
+app.use("/mural", mural)
 
 app.listen(3000, () => {
     console.log("started")

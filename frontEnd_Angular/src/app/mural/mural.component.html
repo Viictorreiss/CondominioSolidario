@@ -1,125 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="./mural.component.css">
   </head>
 
   <title>Mural</title>
+  
+  <app-header-mural></app-header-mural>
 
   <body>
+
     
-    <header>
-        <section class="menu">
-      
-            <input type="checkbox" id="menu-hamburguer" class="menu__hamburguer">
-            <label for="menu-hamburguer" class="check-btn"></label>
-      
-            <ul class="menu-ul menu__ul">
-      
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html" class="menu__contato">Perfil</a></li>
-                <li><a class="menu__sobre"  >Adicionar</a></li>
-                <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </ul>
-        </section>>
-    </header>   
-      
 
-    <div class="row">
-      <div class="col-md-1 ms-md-auto ms-1">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Filto</button>
-        <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Mercado</a></li>
-            <li><a class="dropdown-item" href="#">Farmáia</a></li>
-            <li><a class="dropdown-item" href="#">Doação de alimentos</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Itens de higiene</a></li>
-            <li><a class="dropdown-item" href="#">Carros e meios de transporte</a></li>
-            <li><a class="dropdown-item" href="#">Conserto de equipamentos</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Passear com cachorros</a></li>
-            <li><a class="dropdown-item" href="#">Tarefas domésticas/serviços manuais</a></li>
-            <li><a class="dropdown-item" href="#">Outros</a></li>
-        </ul>
+    <ng-template #detalhes let-c="close" let-d="dismiss">
+        <div class="container" mat-dialog-content>
+          <form method="POST" class="solicitacao board modalDetalhes">
+    
+            <div class="row mb-2">
+              <label for="lnome" class="col-sm-3 col-form-label"
+                >Nome</label
+              >
+            </div>
+    
+            <div class="mb-3 row">
+              <label for="lbapto" class="col-sm-3 col-form-label">Apto.</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  readonly
+                  class="form-control-plaintext"
+                  id="apto"
+                  value=""
+                />
+              </div>
+            </div>
+    
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Solicitação</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                maxlength="250"
+                #idadeInput
+              ></textarea>
+            </div>
+    
+            <div mat-dialog-actions>
+                <button type="button" class="btn botao cancelar btn-outline-danger" mat-button (click)="d('Cross click')">Retornar</button>
+                <button type="submit" class="btn botao confirmar btn-outline-success ms-4 me-5" mat-button [mat-dialog-close]="data.nome" (click)="c('Save click')" cdkFocusInitial>Ajudar</button>
+            </div>
+          </form>
+        </div>  
+    </ng-template>
+
+    <!-- -->
+
+    <!-- <div class="row">
+      <div class="col-md-2 ms-md-auto ms-1">
+        <div class="mb-9 row">
+          <div class="col-sm-9">
+            <select class="btn btn-outline-secondary dropdown-toggle" name="tags" id="tags">
+                <option value="mercado">Mercado</option>
+                <option value="farmacia">Farmácia</option>
+                <option value="alimentos">Doação de alimentos</option>
+            </select>
+          </div>
+        </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="container">
+    <div class="container pb-2 pt-2">
+      <div class="board urgente mr-2">    
+        <h1 class="titulo">URGENTE</h1>          
+        <div class="card border-danger h-100" *ngFor="let item of muralUrgente">
+          <div class="card-body">
+            <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
+            <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
+            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <div class="buttonsDiv">
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="board importante mr-2">
+        <h1 class="titulo">IMPORTANTE</h1>
+        <div class="card border-warning h-100" *ngFor="let item of muralImportante">
+          <div class="card-body separacao-importante">
+            <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
+            <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
+            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <div class="buttonsDiv">
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="board pendente mr-2">
+        <h1 class="titulo">PENDENTE</h1>
+        <div class="card border-info h-100" *ngFor="let item of muralImportante">
+          <div class="card-body separacao-pendente">
+            <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
+            <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
+            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <div class="buttonsDiv">
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+            </div>
+          </div>
+        </div>
+      </div>
       
-        <div class="row board urgente">
-          <div class="col">
-            <h1 class="titulo">URGENTE</h1>
-                <div class="card border-danger h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">{{nome}}</h5>
-                        <p class="card-text descricao">Breve descrição</p>
-                    </div>
 
-                    <div class="card-body separacao">
-                        <h5 class="card-title">Nome morador</h5>
-                        <p class="card-text descricao">Breve descrição</p>
-
-                        <a href="#" class="button detalhes" >Detalhes</a>
-                    </div>
-                </div>
-             </div>
+      <div class="board execucao">
+        <h1 class="titulo">EM EXECUÇÃO</h1>
+        <div class="card border-success h-100" *ngFor="let item of muralExecucao">
+          <div class="card-body separacao-execucao">
+            <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
+            <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
+            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <div class="buttonsDiv">
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+            </div>
+            <!-- <a class="button detalhes" (click)="open(detalhes)">Detalhes</a> -->
+          </div>
         </div>
-
-        <div class="col board importante order-5">
-          <h1 class="titulo">IMPORTANTE</h1>
-            <div class="card border-warning h-100">
-                <div class="card-body separacao-importante">
-                  <h5 class="card-title">Nome morador</h5>
-                  <p class="card-text descricao">Breve descrição</p>
-
-                  <a href="#" class="button detalhes">Detalhes</a>
-                </div>
-
-                <div class="card-body separacao-importante">
-                    <h5 class="card-title">Nome morador</h5>
-                    <p class="card-text descricao">Breve descrição</p>
-  
-                    <a href="#" class="button detalhes"  >Detalhes</a>
-                  </div>
-        </div>
-
-        </div>
-          <div class="col board pendente order-1">
-            <h1 class="titulo">PENDENTE</h1>
-            <div class="card border-info h-100">
-                <div class="card-body separacao-pendente">
-                  <h5 class="card-title">Nome morador</h5>
-                  <p class="card-text descricao">Breve descrição</p>
-
-                  <a href="#" class="button detalhes">Detalhes</a>
-                </div>
-
-                <div class="card-body separacao-pendente">
-                    <h5 class="card-title">Nome morador</h5>
-                    <p class="card-text descricao">Breve descrição</p>
-  
-                    <a href="#" class="button detalhes">Detalhes</a>
-                  </div>
-            </div>          
-        </div>
-    </div>
-
+      </div>
+    </div> 
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script> -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -128,4 +170,3 @@
     -->
   </body>
 </html>
-

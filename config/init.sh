@@ -1,0 +1,1 @@
+docker exec -it db_condsolidario sh -c "mysql -u root -p1adf020b condsolidario < /home/app/database/condsolidario.sql"
