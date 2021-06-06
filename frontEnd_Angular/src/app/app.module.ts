@@ -15,6 +15,9 @@ import { AddTaskComponent } from './addTask/addTask.component';
 import { MuralComponent } from './mural/mural.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
+import { CondominioRegistryComponent } from './condominio-registry/condominio-registry.component';
+import { LinkMoradoresComponent } from './link-moradores/link-moradores.component';
+import { LinkUserComponent } from './link-user/link-user.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,6 +31,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CadastroUserComponent,
     LoginUserComponent,
     HomeComponent,
+    CondominioRegistryComponent,
+    LinkMoradoresComponent,
+    LinkUserComponent,
+    MuralComponent,
+  //  CadastroCondominioComponent,
     PerfilComponent,
     HeaderMuralComponent,
     AddTaskComponent

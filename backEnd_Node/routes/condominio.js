@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     const body = req.body;
     const conn = await connect();
-    const retorno = await conn.query('INSERT INTO condominio (Nome, CEP, UF, Cidade, Bairro, Rua, Numero) values (?, ?, ?, ?, ?, ?, ?);', [body.nome, body.cep, body.uf, body.cidade, body.bairro, body.rua, body.numero]); 
+    const retorno = await conn.query('INSERT INTO condominio (Nome, CEP, UF, Cidade, Bairro, Rua, Numero) values (?, ?, ?, ?, ?, ?, ?);', [body.Nome, body.CEP, body.UF, body.Cidade, body.Bairro, body.Rua, body.Numero]); 
     res.send(retorno)
 })
 
