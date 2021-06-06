@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { CrudService } from '../cadastro-condominio/crud.service';
 import { CadastroUsuario } from './cadastro-user';
@@ -28,7 +27,8 @@ export class CadastroUserComponent extends CrudService<CadastroUsuario> implemen
     let user = this.criarObjeto();
     this.create(user).subscribe(data => {
       console.log('sucesso');
-      this.router.navigate([`/usuario/${data[0].insertId}/link`]);
+      localStorage.setItem('idUsuario',data[0].insertId)
+      this.router.navigate([`/perfil/${data[0].insertId}`]);
     });
   }
 

@@ -13,6 +13,14 @@ export class CrudService<T> {
       );
   }
 
+  listWhereOther(otherRoute, id) {
+    return this.http.get<T[]>(`${this.API_URL}/${otherRoute}/${id}`)
+      .pipe(
+        delay(2000),
+        tap(console.log)
+      );
+  }
+
   loadByID(id) {
     return this.http.get<T>(`${this.API_URL}/${id}`).pipe(take(1));
   }

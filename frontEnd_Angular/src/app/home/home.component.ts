@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  idUsuario: string;
+
+  constructor(protected http: HttpClient, protected route: ActivatedRoute, protected router: Router) { }
+
+  returnLocalStorage() {
+    return localStorage.getItem('idUsuario')
+  }
 
   ngOnInit(): void {
+    /* this.idUsuario = localStorage.getItem('idUsuario') */
+    /*if(idUsuario) {
+      this.router.navigate([`/perfil/${idUsuario}`]);
+    } */
   }
 
 }

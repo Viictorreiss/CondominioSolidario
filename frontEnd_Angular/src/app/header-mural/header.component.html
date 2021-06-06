@@ -4,9 +4,9 @@
     <label for="menu-hamburguer" class="check-btn"></label>
 
     <ul class="menu-ul menu__ul">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="contact.html" class="menu__contato">Perfil</a></li>
-      <li><a class="menu__sobre" routerLink="/addTask">Adicionar</a></li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a (click)="openLink('perfil')">Perfil</a></li>
+      <li><a (click)="openLink('addTask')">Adicionar</a></li>
       <div class="social-media">
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-github"></i></a>

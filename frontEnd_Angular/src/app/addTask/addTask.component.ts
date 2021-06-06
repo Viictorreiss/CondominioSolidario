@@ -4,7 +4,6 @@ import { environment } from '../../environments/environment';
 import { CrudService } from './../services/crud.service'
 import { Mural } from './../mural/mural'
 import { Task } from './addTask'
-
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
@@ -21,7 +20,7 @@ export class AddTaskComponent extends CrudService<Task> implements OnInit {
   nome: string;
   aptoBloco: string;
 
-  constructor(protected http: HttpClient,  private route: ActivatedRoute,) { 
+  constructor(protected http: HttpClient,  private route: ActivatedRoute, private router: Router) { 
     super(http, `${environment.backendBaseUri}/mural`);
     this.ID_SERVICO = 1    
   }
@@ -36,25 +35,24 @@ export class AddTaskComponent extends CrudService<Task> implements OnInit {
   saveTask() {
     this.createOther('task', new Task(1, this.ID_SERVICO, null, this.id)).subscribe(response => {
       console.log(response)
-      window.location.reload(); 
+      this.router.navigate(['/mural'])
     }, error => {
       console.error(error)
     })
   }
 
-  //nome apto - usuario
-  //servico descricao
-
-  //idApoiado, idEstado = 1, idServico = var, idVoluntario = null
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.id = params['id'];      
-    });    
-    this.loadByIdOther('user', this.id).subscribe(result => {
-      this.nome = result[0].Nome
-      this.aptoBloco = `${result[0].Apartamento} Bloco ${result[0].Bloco}`
-    })
-    this.selectTask(this.ID_SERVICO)
+    if(localStorage.getItem('idUsuario')) {
+      this.route.params.subscribe(params => {
+        this.id = params['id'];      
+      });    
+      this.loadByIdOther('user', this.id).subscribe(result => {
+        this.nome = result[0].Nome
+        this.aptoBloco = `${result[0].Apartamento} Bloco ${result[0].Bloco}`
+      })
+      this.selectTask(this.ID_SERVICO)
+    } else {
+      this.router.navigate(["/"])
+    }
   }
-
 }

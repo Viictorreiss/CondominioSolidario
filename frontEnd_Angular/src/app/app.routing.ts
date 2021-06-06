@@ -8,6 +8,7 @@ import { LinkMoradoresComponent } from './link-moradores/link-moradores.componen
 import { LinkUserComponent } from './link-user/link-user.component';
 import { MuralComponent } from './mural/mural.component';
 import { AddTaskComponent } from './addTask/addTask.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const appRoutes: Routes = [
    { 
@@ -27,7 +28,7 @@ const appRoutes: Routes = [
       component: LoginUserComponent
    },
    {
-      path: 'addTask',
+      path: 'addTask/:id',
       component: AddTaskComponent
    },
    {
@@ -41,6 +42,10 @@ const appRoutes: Routes = [
    {
       path: 'usuario/:id/link', 
       component: LinkUserComponent 
+   },
+   {
+      path: 'perfil/:id', 
+      component: PerfilComponent 
    }
 
    // otherwise redirect to home
