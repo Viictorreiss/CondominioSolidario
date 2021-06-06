@@ -8,9 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
-import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
+// import { CadastroCondominioComponent } from './cadastro-condominio/cadastro-condominio.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderMuralComponent } from './header-mural/header.component';
+import { AddTaskComponent } from './addTask/addTask.component';
 import { MuralComponent } from './mural/mural.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
@@ -23,12 +24,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     HeaderComponent,
     MuralComponent,
-    CadastroCondominioComponent,
+    // CadastroCondominioComponent,
     CadastroUserComponent,
     LoginUserComponent,
     HomeComponent,
     PerfilComponent,
-    HeaderMuralComponent
+    HeaderMuralComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,

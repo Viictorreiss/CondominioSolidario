@@ -17,12 +17,21 @@ export class CrudService<T> {
     return this.http.get<T>(`${this.API_URL}/${id}`).pipe(take(1));
   }
 
-  private create(record: T) {
+  loadByIdOther(otherRoute, id) {
+    return this.http.get<T>(`${this.API_URL}/${otherRoute}?id=${id}`).pipe(take(1));
+  }
+
+  create(record: T) {
     return this.http.post(this.API_URL, record).pipe(take(1));
   }
 
-  private update(record: T) {
-    return this.http.put(`${this.API_URL}/${record['id']}`, record).pipe(take(1));
+  createOther(otherRoute, record: T) {
+    return this.http.post(`${this.API_URL}/${otherRoute}`, record).pipe(take(1));
+  }
+
+  update(record: T) {
+    //return this.http.put(`${this.API_URL}/${record['id']}`, record).pipe(take(1));
+    return this.http.put(this.API_URL, record).pipe(take(1));
   }
 
   save(record: T) {

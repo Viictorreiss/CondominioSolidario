@@ -5,8 +5,7 @@ import { CadastroUserComponent } from './cadastro-user/cadastro-user.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { HomeComponent } from './home/home.component';
 import { MuralComponent } from './mural/mural.component';
-
-
+import { AddTaskComponent } from './addTask/addTask.component';
 
 const appRoutes: Routes = [
    { 
@@ -24,6 +23,10 @@ const appRoutes: Routes = [
    {
       path: 'login',
       component: LoginUserComponent
+   },
+   {
+      path: 'addTask',
+      component: AddTaskComponent
    },
 
    // otherwise redirect to home
