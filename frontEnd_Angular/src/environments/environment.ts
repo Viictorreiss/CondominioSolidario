@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   backendBaseUri: "http://localhost:3000"
+  //backendBaseUri: "https://condominiosolidariobackend.loca.lt"
 };
 
 /*

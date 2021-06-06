@@ -6,12 +6,18 @@ import { HomeComponent } from './home/home.component';
 import { CondominioRegistryComponent } from './condominio-registry/condominio-registry.component';
 import { LinkMoradoresComponent } from './link-moradores/link-moradores.component';
 import { LinkUserComponent } from './link-user/link-user.component';
+import { MuralComponent } from './mural/mural.component';
+
 
 
 const appRoutes: Routes = [
    { 
       path: '', 
       component: HomeComponent 
+   },
+   {
+      path: 'mural',
+      component: MuralComponent
    },
    { 
       path: 'condominio/:id/cadastro', 

@@ -1,0 +1,115 @@
+<div class="col-12">
+  <section class="menu">
+    <input type="checkbox" id="menu-hamburguer" class="menu__hamburguer" />
+    <label for="menu-hamburguer" class="check-btn"></label>
+
+    <ul class="menu-ul menu__ul">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html" class="menu__contato">Perfil</a></li>
+      <li><a class="menu__sobre" (click)="open(addTask)">Adicionar</a></li>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </ul>
+  </section>
+</div>
+
+<ng-template #addTask let-c="close" let-d="dismiss">
+  <div class="container pb-3 pt-3 pr-3 pl-3" mat-dialog-content>
+    <form method="POST" class="solicitacao board border  pb-3 pt-3 pr-3 pl-3">
+      <h1 class="titulo">Informe sua solicitação</h1>
+
+      <div class="row mb-2">
+        <label for="lnome" class="col-sm-3 col-form-label">Nome</label>
+        <div class="col-sm-8">
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="inome"
+            readonly
+            matInput
+            [(ngModel)]="data.nome"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="lbapto" class="col-sm-3 col-form-label">Apto.</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext"
+            id="apto"
+            value=""
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="tags"> Escolha um: </label>
+        <div class="col-sm-9">
+          <select name="tags" id="tags">
+            <optgroup label="URGENTE">
+              <option value="mercado">Mercado</option>
+              <option value="farmacia">Farmácia</option>
+              <option value="alimentos">Doação de alimentos</option>
+            </optgroup>
+            <optgroup label="IMPORTANTE">
+              <option value="higiene">Doação de itens de higiene</option>
+              <option value="carona">
+                Carona e meios de transporte de urgencia
+              </option>
+              <option value="eletronicos">
+                Conserto de equipamentos eletronicos
+              </option>
+            </optgroup>
+            <optgroup label="PENDENTE">
+              <option value="cachorros">Passear com cachorros</option>
+              <option value="tarefas">
+                Tarefas domésticas e pequenos serviçoos manuais
+              </option>
+              <option value="outros">Outros</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >De uma breve descrição</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          maxlength="250"
+          #idadeInput
+        ></textarea>
+      </div>
+
+      <div mat-dialog-actions>
+        <button
+          type="button"
+          class="btn botao cancelar btn-outline-danger"
+          mat-button
+          (click)="d('Cross click')"
+        >
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          class="btn botao confirmar btn-outline-success ms-4 me-5"
+          mat-button
+          [mat-dialog-close]="data.nome"
+          (click)="c('Save click')"
+          cdkFocusInitial
+        >
+          Criar Solicitação
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
