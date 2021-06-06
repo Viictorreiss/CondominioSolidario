@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { CrudService } from '../cadastro-condominio/crud.service';
 import { CadastroUsuario } from './cadastro-user';
@@ -11,25 +13,27 @@ import { CadastroUsuario } from './cadastro-user';
   styleUrls: ['./cadastro-user.component.css']
 })
 export class CadastroUserComponent extends CrudService<CadastroUsuario> implements OnInit {
-
+  idCondominio: number;
   model: any = {};
 
-  constructor(protected http: HttpClient) {
+  constructor(protected http: HttpClient, protected route: ActivatedRoute, protected router: Router) {
     super(http, `${environment.backendBaseUri}/usuario`);
   }
 
   ngOnInit(): void {
+    this.idCondominio = Number(this.route.snapshot.paramMap.get('id'));
   }
 
   register() {
     let user = this.criarObjeto();
-    this.create(user).subscribe(() => {
-      console.log('sucesso!');
+    this.create(user).subscribe(data => {
+      console.log('sucesso');
+      this.router.navigate([`/usuario/${data[0].insertId}/link`]);
     });
   }
 
   criarObjeto() : any {
 
-    return new CadastroUsuario(this.model.nome, this.model.bloco, this.model.apartamento, this.model.senha);
+    return new CadastroUsuario(this.model.nome, this.model.bloco, this.model.apartamento, this.model.senha, this.model.telefone, this.idCondominio);
   }
 }

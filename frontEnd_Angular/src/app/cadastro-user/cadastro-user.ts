@@ -11,10 +11,12 @@ export class CadastroUsuario {
     Documento:string;
     Senha: string;
 
-    constructor(nome:string, bloco:string, apartamento:string, senha:string) {
+    constructor(nome:string, bloco:string, apartamento:string, senha:string, telefone:number, idCondominio: number) {
       this.Nome = nome;
       this.Bloco = bloco;
       this.Apartamento = apartamento;
       this.Senha = senha;
+      this.Telefone = telefone;
+      this.IdCondominio = idCondominio;
     }
 }
