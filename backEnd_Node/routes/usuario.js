@@ -35,4 +35,30 @@ router.patch("/ativo", async (req, res) => {
     res.send(retorno)
 })
 
+router.get("/:id", async (req, res) => {
+    const conn = await connect();
+    const [rows] = await conn.query('SELECT * FROM usuario WHERE idUsuario = ?;',[req.params.id]); 
+    // disconnect();
+    res.send(rows)
+})
+
+router.get("/voluntario/:id", async (req, res) => {
+    const conn = await connect();
+    const [rows] = await conn.query('SELECT * FROM tarefas WHERE idVoluntario = ?;', [req.params.id]); 
+    res.send(rows)
+})
+
+router.get("/apoiado/:id", async (req, res) => {
+    const conn = await connect();    
+    const [rows] = await conn.query('SELECT * FROM tarefas WHERE idApoiado = ?;', [req.params.id]); 
+    res.send(rows)
+})
+
+router.get("/login/:id", async (req, res) => {
+    const conn = await connect();
+    const [rows] = await conn.query('SELECT * FROM usuario WHERE Telefone = ? ;', [req.params.id]); 
+    res.send(rows)
+})
+
+
 module.exports = router
