@@ -21,8 +21,6 @@
 
   <body>
 
-    
-
     <ng-template #detalhes let-c="close" let-d="dismiss">
         <div class="container" mat-dialog-content>
           <form method="POST" class="solicitacao board modalDetalhes">
@@ -53,6 +51,7 @@
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"
+                readonly
                 maxlength="250"
                 #idadeInput
               ></textarea>
@@ -89,12 +88,12 @@
           <div class="card-body">
             <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
             <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
-            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
-            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
-            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <p class="card-text card-descricao">Nome: {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
-              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 4, null)">Cancelar</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, idVoluntario)">Ajudar</a>
             </div>
           </div>
         </div>
@@ -106,12 +105,12 @@
           <div class="card-body separacao-importante">
             <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
             <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
-            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
-            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
-            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <p class="card-text card-descricao">Nome: {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
-              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 4, null)">Cancelar</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, idVoluntario)">Ajudar</a>
             </div>
           </div>
         </div>
@@ -119,16 +118,16 @@
 
       <div class="board pendente mr-2">
         <h1 class="titulo">PENDENTE</h1>
-        <div class="card border-info h-100" *ngFor="let item of muralImportante">
+        <div class="card border-info h-100" *ngFor="let item of muralPendente">
           <div class="card-body separacao-pendente">
             <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
             <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
-            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
-            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
-            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <p class="card-text card-descricao">Nome: {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
-              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 4, null)">Cancelar</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, idVoluntario)">Ajudar</a>
             </div>
           </div>
         </div>
@@ -141,17 +140,57 @@
           <div class="card-body separacao-execucao">
             <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
             <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
-            <p class="card-text card-descricao">Nome: <br /> {{item.NOME_APOIADO}}</p>
-            <p class="card-text card-descricao">Telefone: <br /> {{item.telefone}}</p>
-            <p class="card-text card-descricao">Apto/Bloco: <br /> {{item.apartamento + item.bloco}}</p>
+            <p class="card-text card-descricao">Nome: {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="open(detalhes)">Ajudar</a>
-              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="open(detalhes)">Cancelar</a>
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 1, null)">Cancelar</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 3, idVoluntario)">Concluir</a>
             </div>
             <!-- <a class="button detalhes" (click)="open(detalhes)">Detalhes</a> -->
           </div>
         </div>
       </div>
+
+
+      <!-- <div class="board execucao">
+        <h1 class="titulo">CANCELADOS</h1>
+        <div class="card border-success h-100" *ngFor="let item of muralCancelado">
+          <div class="card-body separacao-execucao">
+            <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
+            <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
+            <p class="card-text card-descricao">Nome: {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
+            <div class="buttonsDiv">
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 1, null)">Voltar</a>              
+            </div>
+            <a class="button detalhes" (click)="open(detalhes)">Detalhes</a>
+          </div>
+        </div>
+      </div> -->
+
+
+<!-- 
+      <div class="board execucao">
+        <h1 class="titulo">CONCLUIDO</h1>
+        <div class="card border-success h-100" *ngFor="let item of muralConcluido">
+          <div class="card-body separacao-execucao">
+            <h5 class="card-title">{{item.NOME_APOIADO}}</h5>
+            <p class="card-text descricao">{{item.NOME_SERVICO}}</p>
+            <p class="card-text card-descricao">Nome: {{item.NOME_APOIADO}}</p>
+            <p class="card-text card-descricao">Telefone: {{item.telefone}}</p>
+            <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
+            <div class="buttonsDiv">
+              <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 1, null)">Voltar</a>              
+            </div>
+            <a class="button detalhes" (click)="open(detalhes)">Detalhes</a>
+          </div>
+        </div>
+      </div> -->
+
+
+
     </div> 
 
     <!-- Optional JavaScript; choose one of the two! -->
