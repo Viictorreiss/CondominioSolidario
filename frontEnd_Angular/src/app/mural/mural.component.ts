@@ -20,7 +20,8 @@ export class MuralComponent extends CrudService<Mural> implements OnInit {
   muralExecucao: any[];
   muralCancelado: any[];
   muralConcluido: any[];
-  
+  idVoluntario: string;
+
   constructor(protected http: HttpClient, config: NgbModalConfig, private modalService: NgbModal, private router: Router, activatedRoute: ActivatedRoute) {
     super(http, `${environment.backendBaseUri}/mural`);
     config.backdrop = 'static';
@@ -42,6 +43,7 @@ export class MuralComponent extends CrudService<Mural> implements OnInit {
   }
 
   ngOnInit(): void {
+    this.idVoluntario = localStorage.getItem('idUsuario');
     this.list().subscribe(result => {
       this.muralUrgente = result.filter((mural) => {
         return mural.IdPrioridade == 1 && mural.ID_ESTADO == 1

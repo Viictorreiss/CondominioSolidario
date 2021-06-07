@@ -22,7 +22,6 @@ export class LoginUserComponent extends CrudService<Login> implements OnInit {
   login() {
     this.listWhereOther('login', this.model.telefone).subscribe(result => {
       if(this.model.senha == result[0].Senha) {
-        console.log(result[0])
         localStorage.setItem('idUsuario', result[0].IdUsuario)
         this.router.navigate([`/perfil/${result[0].IdUsuario}`]);
       } else {

@@ -93,7 +93,7 @@
             <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
               <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 4, null)">Cancelar</a>
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, 2)">Ajudar</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, idVoluntario)">Ajudar</a>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@
             <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
               <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 4, null)">Cancelar</a>
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, 2)">Ajudar</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, idVoluntario)">Ajudar</a>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@
             <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
               <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 4, null)">Cancelar</a>
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, 2)">Ajudar</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 2, idVoluntario)">Ajudar</a>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
             <p class="card-text card-descricao">Apto/Bloco: {{item.apartamento + item.bloco}}</p>
             <div class="buttonsDiv">
               <a class="btn btn-outline-danger" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 1, null)">Cancelar</a>
-              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 3, item.ID_VOLUNTARIO)">Concluir</a>
+              <a class="btn btn-outline-success" style="padding: 5px 15px" (click)="taskToExec(item.ID_TAREFA, 3, idVoluntario)">Concluir</a>
             </div>
             <!-- <a class="button detalhes" (click)="open(detalhes)">Detalhes</a> -->
           </div>
